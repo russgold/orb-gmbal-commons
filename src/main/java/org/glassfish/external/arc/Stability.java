@@ -13,7 +13,6 @@ package org.glassfish.external.arc;
 /**
   Taxonomy values.
   See http://opensolaris.org/os/community/arc/policies/interface-taxonomy/
-  <p>
   <h3>Policy</h3>
     <ul>
     <li>Applies to All software produced by SMI</li>
@@ -21,6 +20,7 @@ package org.glassfish.external.arc;
     <li>Approval SAC</li>
     <li>Effective April, 1992</li>
     <li>Policy </li>
+    </ul>
         <ul><li>All software interfaces must be classified according to this taxonomy.
         Interfaces are defined as APIs, files and directory structures, file formats, protocols,
         (sometimes) even performance and reliability behaviors, and any other attribute upon
@@ -45,7 +45,6 @@ package org.glassfish.external.arc;
         in the documentation. In the case where a well-defined, versioned document is the
         specification, both the name and precise version must be be cited.</li>
         </ul>
-    </ul>
   @author llc
  */
 public enum Stability  {
@@ -104,61 +103,60 @@ public enum Stability  {
     |   |---------------------+------------------------------------------------|                           
     |   | Examples            | SUNW* package abbreviations, some config utils |                           
     +--------------------------------------------------------------------------+                           
-    </pre>
+  </pre>
     No guarantees are made about either source or binary compatibility of these interfaces
     from one Minor release to the next. The most drastic incompatible change of removal of
      the interface in a Minor release is allowed. Uncommitted interfaces are generally not
      appropriate for use by release-independent products.
-    <p>
+    &lt;p&gt;
     Uncommitted is not a license for gratuitous change. Any incompatible changes to the
     interface should be motivated by true improvement to the interface which may include
     justifiable ease of use considerations. The general expectation is that Uncommitted
     interfaces are not likely to change incompatibly and if such changes occur they will be
     small in impact and should often have a mitigation plan.
-    <p>
+    &lt;p&gt;
     Uncommitted interfaces generally fall into one of the following subcategories:
-    <p>
-    <ul>
-        <li>
+    &lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
             Interfaces that are experimental or transitional.
             They are typically used to give outside developers early access to new or
             rapidly-changing technology, or to provide an interim solution to a problem where a
             more general solution is anticipated.
-        </li>
+        &lt;/li&gt;
     
-        <li>
+        &lt;li&gt;
             Interfaces whose specification is controlled by an outside body and the
             implementation provider is only willing to commit to forking until the next minor
             release point should that outside body introduce incompatible change.
             Note that this "middle of the road" approach is often the best business decision
             when the controlling body hasn't established a history of respecting compatibility.
-        </li>
+        &lt;/li&gt;
         
-        <li>
+        &lt;li&gt;
             Interfaces whose target audience values innovation (and possibly ease of use) over
             stability. This attribute is often asserted for administrative interfaces for higher
             web tier components. Note that ARC review may request data to support such an assertion.
-        </li>
-    <p>
+        &lt;/li&gt;
+    &lt;p&gt;
     A project's intention to import an Uncommitted interface from another consolidation should
     be discussed with the ARC early. The stability classification of the interface -- or
     a replacement interface -- might be raised. The opinion allowing any project to import an
     Uncommitted interface must explain why it is acceptable, and a contract must be put into
     place allowing this use. For Sun products, the similarity in the usage of Uncommitted and
     Consolidation Private interfaces should be noted.
-    <p>
+    &lt;p&gt;
     Any documentation for an Uncommitted interface must contain warnings that "these interfaces
     are subject to change without warning and should not be used in unbundled products".
     In some situations, it may be appropriate to document Uncommitted interfaces in white papers
     rather than in standard product documentation. When changes are introduced, the changes
     should be mentioned in the release notes for the affected release.
-    <p>
+    &lt;p&gt;
     NOTE: If we choose to offer a draft standard implementation but state our intention to track
     the standard (or the portions we find technically sound or likely to be standardized),
     we set customer expectations for incompatible changes by classifying the interface Uncommitted.
     The interface must be reclassified Committed when standard is final.
-    Such an intention could be encoded "Uncommitted->Committed".)
-</pre>
+    Such an intention could be encoded "Uncommitted-&gt;Committed".)
  */
     UNCOMMITTED( "Uncommitted" ),
     
